@@ -1,0 +1,9 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='container'>
+  <image class='user-avator' src='/images/test.png'></image>
+  <text class='user-name'><text style='color: red'>hello</text> , 小程序</text>
+  <view class="moto-container">
+    <text class="moto">开启小程序之旅</text>
+  </view>
+</view>
+
