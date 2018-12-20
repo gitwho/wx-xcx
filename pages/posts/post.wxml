@@ -1,11 +1,33 @@
-<swiper autoplay='true' indicator-dots='true' interval='5000'>
-  <swiper-item>
-    <image src="/images/vr.png"></image>
-  </swiper-item>
-  <swiper-item>
-    <image src="/images/cat.png"></image>
-  </swiper-item>
-  <swiper-item>
-    <image src="/images/bl.png"></image>
-  </swiper-item>
-</swiper>
+<view>
+  <swiper autoplay='true' indicator-dots='true' interval='5000'>
+    <swiper-item>
+      <image src="/images/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/cat.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/bl.png"></image>
+    </swiper-item>
+  </swiper>
+  <block wx:for="{{post_author}}" wx:for-item="item" wx:for-index="idx">
+    <view class="post-container">
+      <view class='author'>
+        <image class="avatarImg" src="{{item.avatar}}"></image>
+        <text class="time">{{idx}} {{item.date}}</text>
+      </view>
+      <image class='list_img' src='{{item.imgSrc}}'></image>
+      <text class='pageContent'>{{item.content}}</text>
+      <view class='like'>
+        <image class='star' src='/images/icon/none-star.png'></image>
+        <text class='like-num'>{{item.reading}}</text>
+        <image class='comment' src='/images/icon/chat1.png'></image>
+        <text class='comment-num'>{{item.collection}}</text>
+      </view>
+      
+    </view>
+  </block>
+
+  
+</view>
+
