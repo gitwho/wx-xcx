@@ -1,0 +1,16 @@
+<template name="postItem">
+  <view class="post-container">
+    <view class='author'>
+      <image class="avatarImg" src="{{avatar}}"></image>
+      <text class="time">{{idx}} {{date}}</text>
+    </view>
+    <image class='list_img' src='{{imgSrc}}'></image>
+    <text class='pageContent'>{{content}}</text>
+    <view class='like'>
+      <image class='star' src='/images/icon/none-star.png'></image>
+      <text class='like-num'>{{reading}}</text>
+      <image class='comment' src='/images/icon/chat1.png'></image>
+      <text class='comment-num'>{{collection}}</text>
+    </view>
+  </view>
+</template>
