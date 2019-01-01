@@ -1,1 +1,25 @@
-<text>想去</text>
+<view class='det_wrap'>
+  <image class='tit_img' src='/images/sls.jpg'></image>
+  <image class='audio' src='/images/music/music-start.png'></image>
+  <view class='author_info'>
+    <image class='author_img' src='/images/avatar/1.png'></image>
+    <text class='author_name'>哈了是否</text>
+    <text class='const-text'>发表于</text>
+    <text class='commit_time'>34xiaoshi</text>
+  </view>
+  <view class='tit'>文章标题</view>
+  <view class='feature'>
+    <view class='fun'>
+      <image class='collection' src='/images/icon/collection.png'></image>
+      <image class='share' src='/images/icon/share.png'></image>
+    </view>
+    <view class='line'></view>
+  </view>
+  <view class='content'>
+    详细内容
+  </view>
+  
+   
+  
+
+</view>

@@ -71,7 +71,7 @@ Page({
   onPostTap(event) {
     var postid = event.currentTarget.dataset.postid;
     console.log(postid);
-    wx.navigateTo({
+    wx.navigateTo({ // 跳转子页面
       url: 'post-detail/post-detail',
     })
   }
