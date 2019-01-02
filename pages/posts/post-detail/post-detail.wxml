@@ -1,13 +1,13 @@
 <view class='det_wrap'>
-  <image class='tit_img' src='/images/sls.jpg'></image>
+  <image class='tit_img' src='{{postData.headImgSrc}}'></image>
   <image class='audio' src='/images/music/music-start.png'></image>
   <view class='author_info'>
-    <image class='author_img' src='/images/avatar/1.png'></image>
-    <text class='author_name'>哈了是否</text>
+    <image class='author_img' src='{{postData.avatar}}'></image>
+    <text class='author_name'>{{postData.author}}</text>
     <text class='const-text'>发表于</text>
-    <text class='commit_time'>34xiaoshi</text>
+    <text class='commit_time'>{{postData.dataTime}}</text>
   </view>
-  <view class='tit'>文章标题</view>
+  <view class='tit'>{{postData.title}}</view>
   <view class='feature'>
     <view class='fun'>
       <image class='collection' src='/images/icon/collection.png'></image>
@@ -16,7 +16,7 @@
     <view class='line'></view>
   </view>
   <view class='content'>
-    详细内容
+    {{postData.content}}
   </view>
   
    

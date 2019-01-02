@@ -72,7 +72,7 @@ Page({
     var postid = event.currentTarget.dataset.postid;
     console.log(postid);
     wx.navigateTo({ // 跳转子页面
-      url: 'post-detail/post-detail',
+      url: 'post-detail/post-detail?id=' + postid,
     })
   }
 })
