@@ -1,30 +1,72 @@
-var postsData = require('../../../data/posts-data.js')
-
+var postsData = require('../../../data/posts-data.js');
+// 获取全局对象
+var app = getApp();
 Page({
   data: {
-
+    isPlaying: false
   },
   onLoad: function(option) {
     var postid = option.id;
+    // 当前页面id
     this.data.currentId = postid;
     var postData = postsData.postList[postid];
+    // 数据
     this.setData({
       postData: postData
     });
 
     var postsCollected = wx.getStorageSync('posts_collected')
     if(postsCollected) {
-      var postCollected = postsCollected[postid]
-      this.setData({
-        collected: postCollected
-      })
+      var postCollected = postsCollected[postid];
+      // postCollected是否存在
+      if(!!postCollected){
+        this.setData({
+          collected: postCollected
+        })
+      }else{
+        this.setData({
+          collected: false
+        })
+      }
+      
     }else{
       var postsCollected = {}
       postsCollected[postid] = false;
       wx.setStorageSync('posts_collected', postsCollected)
     }
 
+    // 音乐播放图标, 是否是播放状态 及 是否当前页面
+    if (app.globalData.g_isPlaying && app.globalData.g_curMusicId === this.data.currentId){
+      this.setData({
+        isPlaying: true
+      })
+    }
+
+    // 监听音乐
+    this.setAudioMonitor();
   },
+  setAudioMonitor: function(){
+    var that = this;
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    backgroundAudioManager.onPlay(function () {
+      that.setData({
+        isPlaying: true
+      })
+      // 更改全局变量
+      app.globalData.g_isPlaying = true;
+      // 当前music id
+      app.globalData.g_curMusicId = that.data.currentId;
+    })
+    backgroundAudioManager.onPause(function () {
+      that.setData({
+        isPlaying: false
+      })
+      app.globalData.g_isPlaying = false;
+      // 清空当前music id
+      app.globalData.g_curMusicId = null; 
+    })
+  },
+
   onCollectionTap: function(event){
     var postsCollected = wx.getStorageSync('posts_collected');
     // 获取当前id的收藏值
@@ -38,7 +80,23 @@ Page({
     this.showModal(postsCollected, postCollected);
   },
   onShareTap: function(event) {
-    
+    var itemList = [
+      '微信',
+      '朋友圈',
+      'QQ',
+      '微博'
+    ]
+    wx.showActionSheet({
+      itemList: itemList,
+      itemColor: '#333',
+      success: function(res){
+        console.log(res);
+        wx.showModal({
+          title: '分享到'+itemList[res.tapIndex]
+          // content: '用户是否取消？',
+        })
+      }
+    })
   },
 
   showToast: function() {
@@ -75,5 +133,32 @@ Page({
         }
       }
     })
+  },
+// 音乐播放
+  onMusicTap: function(event){
+    var isPlaying = this.data.isPlaying;
+    var currentId = this.data.currentId;
+    var postData = postsData.postList[currentId];
+
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    if(isPlaying) {
+      backgroundAudioManager.pause();
+      this.setData({
+        isPlaying: false
+      })
+      // this.data.isPlaying = false
+    }else {
+      console.log(backgroundAudioManager);
+      backgroundAudioManager.title = postData.music.title;
+      backgroundAudioManager.singer = postData.music.name;
+      backgroundAudioManager.coverImgUrl = postData.music.coverImg;
+      // 设置了 src 之后会自动播放
+      backgroundAudioManager.src = postData.music.url;
+
+       this.setData({
+        isPlaying: true
+      })
+    }
+    
   }
 })

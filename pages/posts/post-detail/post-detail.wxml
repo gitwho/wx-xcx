@@ -1,6 +1,6 @@
 <view class='det_wrap'>
   <image class='tit_img' src='{{postData.headImgSrc}}'></image>
-  <image class='audio' src='/images/music/music-start.png'></image>
+  <image class='audio' catchtap='onMusicTap' src='{{isPlaying ? "/images/music/music-stop.png" : "/images/music/music-start.png"}}'></image>
   <view class='author_info'>
     <image class='author_img' src='{{postData.avatar}}'></image>
     <text class='author_name'>{{postData.author}}</text>
@@ -12,7 +12,7 @@
     <view class='fun'>
       <image class='collection' wx:if="{{collected}}" catchtap="onCollectionTap" src='/images/icon/collection.png'></image>
       <image wx:else catchtap="onCollectionTap" src='/images/icon/collection-anti.png'></image>
-      <image class='share' src='/images/icon/share.png'></image>
+      <image class='share' catchtap='onShareTap' src='/images/icon/share.png'></image>
     </view>
     <view class='line'></view>
   </view>
