@@ -33,7 +33,7 @@ var local_database = [
     detail: '并可以在手机上体验该小程序的实际效果。',
     postId: 1,
     music: {
-      url: "http://dl.stream.qqmusic.qq.com/C400003Bb6zz2erGrB.m4a?guid=8941642448&vkey=16699F21FA7866EDAE16DC65706E5EF81E7E99F2681C11CE1AF8541D3D3F1CD4D7F8F2A06B5C609AAF1FAD82966F59081A3C5863C70F6CBC&uin=0&fromtag=66",
+      url: "http://upscuw.changba.com/1038018441.mp3",
       title: "鬼迷心窍-李宗盛",
       name: '李宗盛',
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000004Wv5BO30pPc0.jpg?max_age=2592000"
