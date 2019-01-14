@@ -1,0 +1,20 @@
+<view>
+  <view class="hot_wrap">
+    <text>正在热映</text>
+    <text class="more">更多 ></text>
+  </view>
+  <view>
+    <view class="hot_m_wrap">
+      <image class="m_cover" src="/images/post/cat.png"></image>
+      <view class='m_detail'>
+        <text class='m_name'>神奇动物说分手了</text>
+        <view class='rank_wrap'>
+          <view class='rank'>
+            <image class="star" src="/images/icon/star.png"></image>
+          </view>
+          <text>8.1</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

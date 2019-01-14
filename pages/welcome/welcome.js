@@ -8,12 +8,12 @@ Page({
 
   },
   onTap(){ // 进同级页面
-    wx.redirectTo({ 
-      url: '../posts/post',
-    })
-    // wx.navigateTo({ // 进子页面，会出现返回箭头
+    // wx.redirectTo({ 
     //   url: '../posts/post',
     // })
+    wx.navigateTo({ // 进子页面，会出现返回箭头
+      url: '../posts/post',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
