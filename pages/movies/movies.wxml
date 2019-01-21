@@ -1,4 +1,11 @@
+<import src="movies/movie-list/movie-list-template.wxml" />
 <view>
+  <template is="movieListTemplate" />
+  <template is="movieListTemplate" />
+  <template is="movieListTemplate" />
+</view>
+
+<!-- <view>
   <view class="hot_wrap">
     <text>正在热映</text>
     <text class="more">更多 ></text>
@@ -17,4 +24,4 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->

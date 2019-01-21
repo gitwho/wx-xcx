@@ -11,8 +11,8 @@ Page({
     // wx.redirectTo({ 
     //   url: '../posts/post',
     // })
-    wx.navigateTo({ // 进子页面，会出现返回箭头
-      url: '../posts/post',
+    wx.switchTab({ // 进子页面，会出现返回箭头
+      url: "../posts/post",
     })
   },
   /**
