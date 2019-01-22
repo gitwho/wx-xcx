@@ -1,9 +1,13 @@
-<template>
-  <view>
-    <image src="/images/icon/star.png"></image>
-    <image src="/images/icon/star.png"></image>
-    <image src="/images/icon/star.png"></image>
-    <image src="/images/icon/star.png"></image>
-    <image src="/images/icon/star.png"></image>
+<template name="starsTemplate">
+  <view class="star_wrap">
+    <view class="stars">
+      <image src="/images/icon/star.png"></image>
+      <image src="/images/icon/star.png"></image>
+      <image src="/images/icon/star.png"></image>
+      <image src="/images/icon/star.png"></image>
+      <image src="/images/icon/star.png"></image>
+    </view>
+    <text>6.7</text>
   </view>
+  
 </template>

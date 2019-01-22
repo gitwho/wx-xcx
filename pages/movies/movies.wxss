@@ -34,3 +34,10 @@
   width: 8px;
   height: 8px;
 }
+
+@import "movie-list/movie-list-template.wxss";
+
+/* .movieList_wrap{
+  display: flex;
+  justify-content: space-between;
+} */

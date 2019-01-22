@@ -1,8 +1,9 @@
 <import src="../stars/stars-template.wxml" />
-<template>
-  <view>
+
+<template name="movieTemplate">
+  <view class="movie_wrap">
     <image src="/images/post/cat.png"></image>
-    <text></text>
+    <text>神奇宝贝</text>
     <template is="starsTemplate" />
   </view>
 </template>

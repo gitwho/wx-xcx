@@ -1,0 +1,28 @@
+@import "../movie/movie-template.wxss";
+
+.cls_wrap{
+  margin: 0 20rpx;
+}
+.classify{
+  font-size:16px;
+  height:40px;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+
+}
+.classify>text{
+  color: #999;
+}
+.more{
+  color: #34b7f4;
+}
+.more image{
+  width: 8px;
+  height: 14px;
+  vertical-align: middle;
+}
+.movies_wrap{
+  display: flex;
+  justify-content: space-between;
+}

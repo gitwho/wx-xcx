@@ -35,6 +35,7 @@ App({
   // },
   globalData: {
     g_isPlaying: false,
-    g_curMusicId: null
+    g_curMusicId: null,
+    doubanBase: "http://t.yushu.im",
   }
 })

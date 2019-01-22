@@ -1,15 +1,19 @@
 <import src="../movie/movie-template.wxml" />
+
 <template name="movieListTemplate">
-  <view>
-    <view>
+  <view class="cls_wrap">
+    <view class="classify">
       <text>正在热映</text>
-      <view>
+      <view class="more">
         <text>更多</text>
         <image src="/images/icon/arrow-right.png"></image>
       </view>
     </view>
-    <template is="movieTemplate" />
-    <template is="movieTemplate" />
-    <template is="movieTemplate" />
+    <view class="movies_wrap">
+      <template is="movieTemplate" />
+      <template is="movieTemplate" />
+      <template is="movieTemplate" />
+    </view>
+    
   </view>
 </template>
