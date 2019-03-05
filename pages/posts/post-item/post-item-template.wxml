@@ -2,7 +2,7 @@
   <view class="post-container">
     <view class='author'>
       <image class="avatarImg" src="{{avatar}}"></image>
-      <text class="time">{{idx}} {{date}}</text>
+      <text class="time">{{date}}</text>
     </view>
     <image class='list_img' src='{{imgSrc}}'></image>
     <text class='pageContent'>{{content}}</text>
