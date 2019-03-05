@@ -1,5 +1,8 @@
 var app = getApp();
 Page({
+  data: {
+
+  },
   onLoad:function(){
     
     var baseUrl = app.globalData.doubanBase
@@ -14,17 +17,37 @@ Page({
 
   },
   getMoviesData: function(url) {
+    var that = this;
     wx.request({
       url: url,
       method: 'GET',
       header: { 'Content-Type':'json'},
       success: function(res){
-        console.log(res)
-        
+        console.log(res);
+        var movieDatas = res.data.subjects;
+        that.processMovieData(movieDatas);
+        // that.setData({
+        //   movieDetail: movieDatas.subjects
+        // })
       },
       fail: function(){
         console.log('fail');
       }
+    })
+  },
+  processMovieData(data){
+    var movies=[],temp={};
+    for(var idx in data){
+      temp = {
+        images: data[idx].images.large,
+        title: data[idx].title,
+        rating: data[idx].rating.average,
+        movieId: data[idx].id
+      }
+      movies.push(temp)
+    }
+    this.setData({
+      movies: movies
     })
   }
 })
