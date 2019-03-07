@@ -4,8 +4,8 @@
   margin: 0 20rpx;
 }
 .classify{
-  font-size:16px;
-  height:40px;
+  font-size:14px;
+  height:32px;
   display:flex;
   justify-content:space-between;
   align-items: center;
@@ -16,11 +16,13 @@
 }
 .more{
   color: #34b7f4;
+  display: flex;
+  align-items: center;
 }
 .more image{
-  width: 8px;
-  height: 14px;
-  vertical-align: middle;
+  width: 6px;
+  height: 12px;
+  margin-left:4px;
 }
 .movies_wrap{
   display: flex;

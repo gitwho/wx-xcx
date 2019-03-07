@@ -1,10 +1,10 @@
 {
   "pages": [
-    
+    "pages/movies/movies",
 
     "pages/posts/post",
 "pages/welcome/welcome",
-    "pages/movies/movies",
+    
     
     "pages/posts/post-detail/post-detail"
     
@@ -20,17 +20,18 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/posts/post",
-        "text": "阅读",
-        "iconPath": "images/tab/yuedu.png",
-        "selectedIconPath": "images/tab/yuedu_hl.png"
-      },
-      {
         "pagePath": "pages/movies/movies",
         "text": "电影",
         "iconPath": "images/tab/dianying.png",
         "selectedIconPath": "images/tab/dianying_hl.png"
+      },
+      {
+        "pagePath": "pages/posts/post",
+        "text": "阅读",
+        "iconPath": "images/tab/yuedu.png",
+        "selectedIconPath": "images/tab/yuedu_hl.png"
       }
+      
       
     ]
   }

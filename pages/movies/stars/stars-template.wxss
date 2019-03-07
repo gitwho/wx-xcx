@@ -1,3 +1,15 @@
+.star_wrap{
+  display:flex;
+  align-items:center;
+
+}
+
+
+.stars{
+  display: inline-block;
+  margin-right: 12px;
+}
+
 .stars image{
   width: 10px;
   height: 10px;

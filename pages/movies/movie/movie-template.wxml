@@ -2,8 +2,11 @@
 
 <template name="movieTemplate">
   <view class="movie_wrap">
-    <image src="/images/robot.webp"></image>
-    <text>神奇宝贝</text>
-    <template is="starsTemplate" />
+    <image src="{{coverUrl}}"></image>
+    <text>{{text}}</text>
+    <view>
+      <template is="starsTemplate" data="{{rating}}"/>
+    </view>
+    
   </view>
 </template>

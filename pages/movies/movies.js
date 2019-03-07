@@ -1,7 +1,11 @@
+var util = require('../../utils/util.js')
+
 var app = getApp();
 Page({
   data: {
-
+    hotMovies: {},
+    comingMovies: {},
+    top250: {}
   },
   onLoad:function(){
     
@@ -11,12 +15,12 @@ Page({
     var top250Url = baseUrl +
       "/v2/movie/top250" + "?start=0&count=3";
 
-    this.getMoviesData(hotMoviesUrl);
-    this.getMoviesData(comingMoviesUrl);
-    this.getMoviesData(top250Url);
+    this.getMoviesData(hotMoviesUrl, 'hotMovies');
+    this.getMoviesData(comingMoviesUrl, 'comingMovies');
+    this.getMoviesData(top250Url, 'top250');
 
   },
-  getMoviesData: function(url) {
+  getMoviesData: function(url, type) {
     var that = this;
     wx.request({
       url: url,
@@ -25,7 +29,7 @@ Page({
       success: function(res){
         console.log(res);
         var movieDatas = res.data.subjects;
-        that.processMovieData(movieDatas);
+        that.processMovieData(movieDatas, type);
         // that.setData({
         //   movieDetail: movieDatas.subjects
         // })
@@ -35,19 +39,26 @@ Page({
       }
     })
   },
-  processMovieData(data){
+  processMovieData(data, type){
     var movies=[],temp={};
     for(var idx in data){
+      var item = data[idx];
+      var title = item.title;
+      if (title.length > 6) {
+        title = title.substring(0, 6) + '...';
+      }
       temp = {
-        images: data[idx].images.large,
-        title: data[idx].title,
-        rating: data[idx].rating.average,
-        movieId: data[idx].id
+        coverUrl: item.images.large,
+        title: title,
+        rating: item.rating.average,
+        movieId: item.id
       }
       movies.push(temp)
     }
-    this.setData({
+    var allMovies = {};
+    allMovies[type] = {
       movies: movies
-    })
+    };
+    this.setData(allMovies);
   }
 })

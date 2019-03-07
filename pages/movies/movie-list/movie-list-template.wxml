@@ -7,12 +7,12 @@
       <view class="more">
         <text>更多</text>
         <image src="/images/icon/arrow-right.png"></image>
-      </view>c
+      </view>
     </view>
     <view class="movies_wrap">
-      <template is="movieTemplate" />
-      <template is="movieTemplate" />
-      <template is="movieTemplate" />
+      <block wx:for="{{movies}}" wx:key="key" wx:for-item="movie">
+        <template is="movieTemplate" data="{{...movie}}"/>
+      </block>
     </view>
     
   </view>
