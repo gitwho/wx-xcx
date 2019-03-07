@@ -14,6 +14,7 @@ Page({
     this.setData({
       postData: postData
     });
+    
 
     var postsCollected = wx.getStorageSync('posts_collected')
     if(postsCollected) {

@@ -7,7 +7,7 @@
       <view class="more">
         <text>更多</text>
         <image src="/images/icon/arrow-right.png"></image>
-      </view>
+      </view>c
     </view>
     <view class="movies_wrap">
       <template is="movieTemplate" />

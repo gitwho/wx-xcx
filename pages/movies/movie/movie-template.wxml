@@ -2,7 +2,7 @@
 
 <template name="movieTemplate">
   <view class="movie_wrap">
-    <image src="/images/post/cat.png"></image>
+    <image src="/images/robot.webp"></image>
     <text>神奇宝贝</text>
     <template is="starsTemplate" />
   </view>
