@@ -1,12 +1,15 @@
 @import "../stars/stars-template.wxss";
 
 .movie_wrap{
-  width: 32%;
-  
+  display:flex;
+  flex-direction:column;
+  padding:0 15rpx;
+
 }
 .movie_wrap>image{
-  width: 100%;
-  height: 150px;
+  width:220rpx;
+  height:300rpx;
+
 }
 .movie_wrap text{
   font-size: 13px;

@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/movies/movies",
-
+    "pages/movies/more-movie/more-movie",
     "pages/posts/post",
 "pages/welcome/welcome",
     
@@ -13,8 +13,8 @@
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#4f5721",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "black"
+    
   },
   "tabBar": {
     "borderStyle": "white",

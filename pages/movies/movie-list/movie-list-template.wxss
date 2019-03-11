@@ -1,7 +1,7 @@
 @import "../movie/movie-template.wxss";
 
 .cls_wrap{
-  margin: 0 20rpx;
+  
 }
 .classify{
   font-size:14px;
@@ -9,6 +9,7 @@
   display:flex;
   justify-content:space-between;
   align-items: center;
+  margin:0 20rpx;
 
 }
 .classify>text{

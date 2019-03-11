@@ -3,9 +3,9 @@
 <template name="movieListTemplate">
   <view class="cls_wrap">
     <view class="classify">
-      <text>正在热映</text>
+      <text>{{categoryTit}}</text>
       <view class="more">
-        <text>更多</text>
+        <text catchtap="onMore" data-category="{{categoryTit}}">更多</text>
         <image src="/images/icon/arrow-right.png"></image>
       </view>
     </view>

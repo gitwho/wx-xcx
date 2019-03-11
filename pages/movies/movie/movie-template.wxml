@@ -3,9 +3,9 @@
 <template name="movieTemplate">
   <view class="movie_wrap">
     <image src="{{coverUrl}}"></image>
-    <text>{{text}}</text>
+    <text>{{title}}</text>
     <view>
-      <template is="starsTemplate" data="{{rating}}"/>
+      <template is="starsTemplate" data="{{stars:stars,rating:rating}}"/>
     </view>
     
   </view>

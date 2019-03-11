@@ -1,6 +1,13 @@
 <import src="movie-list/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid-template.wxml" />
+
 <view>
-  <view class='movieList_wrap'>
+  <view class="search">
+    <icon type='search' class="search-img" size="13" color="#405f80"></icon>
+    <input type="text" placeholder="搜索电影" placeholder-class="placeholder" bindfocus="onBindFocus" bindchange="onBindChage" />
+    <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" bindtap='onCancelImgTap' class="xx-img"></image>
+  </view>
+  <view class='movieList_wrap'  wx:if="{{containerShow}}">
     <view class="movie-template">
       <template is="movieListTemplate" data="{{...hotMovies}}"/>
     </view>
@@ -11,26 +18,12 @@
       <template is="movieListTemplate" data="{{...top250}}" />
     </view>
   </view>
-  
+
+  <view class="search-panel" wx:if="{{searchPanelShow}}">
+    <template is="movieGridTemplate" />
+  </view>
+
 </view>
 
-<!-- <view>
-  <view class="hot_wrap">
-    <text>正在热映</text>
-    <text class="more">更多 ></text>
-  </view>
-  <view>
-    <view class="hot_m_wrap">
-      <image class="m_cover" src="/images/post/cat.png"></image>
-      <view class='m_detail'>
-        <text class='m_name'>神奇动物说分手了</text>
-        <view class='rank_wrap'>
-          <view class='rank'>
-            <image class="star" src="/images/icon/star.png"></image>
-          </view>
-          <text>8.1</text>
-        </view>
-      </view>
-    </view>
-  </view>
-</view> -->
+
+
