@@ -4,7 +4,7 @@
 <view>
   <view class="search">
     <icon type='search' class="search-img" size="13" color="#405f80"></icon>
-    <input type="text" placeholder="搜索电影" placeholder-class="placeholder" bindfocus="onBindFocus" bindchange="onBindChage" />
+    <input type="text" placeholder="搜索电影" placeholder-class="placeholder" bindfocus="onBindFocus" bindchange="onBindChage" bindconfirm="onBindChage" />
     <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" bindtap='onCancelImgTap' class="xx-img"></image>
   </view>
   <view class='movieList_wrap'  wx:if="{{containerShow}}">
@@ -20,7 +20,7 @@
   </view>
 
   <view class="search-panel" wx:if="{{searchPanelShow}}">
-    <template is="movieGridTemplate" />
+    <template is="movieGridTemplate" data="{{...searchResult}}"/>
   </view>
 
 </view>

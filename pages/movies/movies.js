@@ -6,6 +6,7 @@ Page({
     hotMovies: {},
     comingMovies: {},
     top250: {},
+    searchResult: {},
     containerShow: true,
     searchPanelShow: false
   },
@@ -76,19 +77,32 @@ Page({
     })
   },
   onBindFocus: function (event) {
-    console.log('ww');
     this.setData({
       containerShow: false,
       searchPanelShow: true
     })
   },
   onBindChage: function(event){
-
+    console.log(event);
+    var text = event.detail.value;
+    var url = app.globalData.doubanBase + "/v2/movie/search?tag=" + text;
+    this.getMoviesData(url, "searchResult", "");
   },
   onCancelImgTap: function(event){
     this.setData({
       containerShow: true,
-      searchPanelShow: false
-    })
+      searchPanelShow: false,
+      searchResult: {}
+    });
+  },
+  onMovieTap: function(event){
+    var movieid = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: 'movie-detail/movie-detail?movieid=' + movieid,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    });
+    
   }
 })

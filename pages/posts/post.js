@@ -1,17 +1,9 @@
 var postData = require('../../data/posts-data.js')
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     // this.data.post_author = postData.postList //直接修改 this.data 而不调用 this.setData 是无法改变页面的状态的
     

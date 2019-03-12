@@ -65,6 +65,14 @@ Page({
       app.globalData.g_isPlaying = false;
       // 清空当前music id
       app.globalData.g_curMusicId = null; 
+    });
+    wx.onBackgroundAudioStop(function(){
+      that.setData({
+        isPlaying: false
+      })
+      app.globalData.g_isPlaying = false;
+      // 清空当前music id
+      app.globalData.g_curMusicId = null; 
     })
   },
 

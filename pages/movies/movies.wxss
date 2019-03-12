@@ -1,39 +1,5 @@
-/* .hot_wrap{
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10rpx; 
-  margin: 20rpx 0;
-}
-.more{
-  color: #456721
-}
-
-.hot_m_wrap{
-  width:220rpx;
-  height:300rpx;
-
-}
-.m_cover{
-  width: 100%;
-  height: 100%;
-}
-.m_name{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-  display:block;
-}
-
-.rank_wrap{
-  display: flex;
-}
-
-.star{
-  width: 8px;
-  height: 8px;
-} */
-
 @import "movie-list/movie-list-template.wxss";
+@import "movie-grid/movie-grid-template.wxss";
 
 .movieList_wrap{
   background-color: #f2f2f2;
